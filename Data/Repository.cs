@@ -9,6 +9,9 @@ namespace PlatformService.Data
         }
         public void Add(TEntity entity)
         {
+            if (entity is null)
+                throw new ArgumentException(nameof(entity));
+
             _dbContext.Set<TEntity>().Add(entity);
         }
 
