@@ -1,7 +1,3 @@
-using System.Linq;
-using System.Linq.Expressions;
-using Microsoft.EntityFrameworkCore;
-
 namespace PlatformService.Data
 {
     public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
