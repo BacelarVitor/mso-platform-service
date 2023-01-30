@@ -8,6 +8,11 @@ builder.Services
     .AddDbContext<AppDbContext>(opt => opt.UseInMemoryDatabase("InMem"))
     .AddControllers();
 
+
+builder.Services
+            .AddScoped<IPlatformRepository, PlatformRepository>()
+            .AddScoped<IUnitOfWork, UnitOfWork>();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -26,5 +31,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+PrepDeb.PrepPopulation(app);
 
 app.Run();
