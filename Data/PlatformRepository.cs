@@ -1,9 +1,8 @@
-using PlatformService.Data;
 using PlatformService.Models;
 
-namespace mso_platform_service.Data
+namespace PlatformService.Data
 {
-    public class PlatformRepository : Repository<Platform>, IRepository<Platform>
+    public class PlatformRepository : Repository<Platform>, IPlatformRepository
     {
         public PlatformRepository(AppDbContext dbContext) : base(dbContext)
         {
