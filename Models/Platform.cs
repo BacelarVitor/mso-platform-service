@@ -17,5 +17,12 @@ namespace PlatformService.Models
 
         [Required]
         public string Cost { get; private set; }
+
+        public Platform(string name, string publisher, string cost)
+        {
+            Name = name;
+            Publisher = publisher;
+            Cost = cost;
+        }
     }
 }
